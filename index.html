@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vue-validation</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="shortcut icon" href="assets/img/favicon.ico">
+</head>
+
+<body>
+  <div class="container" id="app">
+    <main class="main mt-5">
+      <section class="block">
+        <h1 class="block-title mb-5">お問い合わせ</h1>
+        <div class="block-body">
+          <form action="" class="form">
+              <div class="form-group mb-5">
+                <label for="name">お名前<span class="badge text-danger">必須</span></label>
+                <input type="text" name="name" id="name" v-model="name" class="border d-block px-2 py-1">
+                <errors :errors="errors.name"></errors>
+              </div>
+
+              <p>
+                <input class="button border px-3 py-2" type="submit" value="送信する" @click.prevent="validate">
+              </p>
+
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <script src="assets/js/script.js"></script>
+  
+</body>
+
+</html>
